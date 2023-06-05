@@ -8,7 +8,7 @@ GyverHUB hub("MyDevices", "ESP8266", "");
 #include <FileData.h>
 struct MODES {
   uint8_t max_modes = 7;      // максимум режимов
-  uint8_t number_of_modes = 1;// кол-во режимов
+  uint8_t number_of_modes = 5;// кол-во режимов
   uint8_t time_spin = 2;     // значение времени
   uint8_t selelect_mode = 0;  // выбор режима
   uint8_t selelect_mode_0 = 0;
@@ -50,6 +50,10 @@ void build() {
     modes_.update();
   }
 }
+
+int myMods[modes.number_of_modes] = {0, 1, 2, 3, 4}; // режимы
+int myTime[modes.number_of_modes] = {2, 2, 2, 2, 2}; // время
+
 
 void mod() {
   uint8_t sel_mod;
